@@ -27,6 +27,6 @@ def Big_O(data, alphabet):
 
 data = [1, 2, 3]
 alphabet = ['A', 'B', 'C']
-print(Big_O(data, alphabet))
+#print(Big_O(data, alphabet))
 
 

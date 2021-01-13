@@ -128,8 +128,8 @@ class LinkedList(object):
         temporary_node = self.head
 
         while temporary_node is not None:
-            print(f'Node: {temporary_node.get_data}')
-            temporary_node = temporary_node.get_next()
+            print(f'Node value: {temporary_node.get_data()}')
+            temporary_node = temporary_node .get_next()
 
 
 #Create a linked list and insert some items
@@ -138,15 +138,119 @@ itemList.insert(24)
 itemList.insert(31)
 itemList.insert(50)
 itemList.insert(18)
-itemList.dump_list()
+#itemList.dump_list()
 #Print out the list
-itemList.deleteAt(3)
-print("Item count: ", itemList.get_count())
+#itemList.deleteAt(3)
+#print("Item count: ", itemList.get_count())
 #print('finding item: ', itemList.find(24))
 #print('finding item: ', itemList.find(60))
 
 
+# Stacks and queues example
+#Stacks are best described by the acronym LIFO (Last in First out)
+#That is, the last item to e added is the first to be popped out
+stack = []
+#stack items to a stack list
+stack.append(5)
+stack.append(4)
+stack.append(7)
+stack.append(8)
 
+# remove the last added item from the list
+#print('popped', stack.pop())
+#print('new_stack', stack)
+
+
+#Queues follow the name queues. First added is first popped
+#Using list to represent queues will result in a linear time
+#A more efficient way (constant time) will be to use deque similar to a list
+from collections import deque
+
+queue = deque()
+queue.append(1)
+queue.append(7)
+queue.append(6)
+queue.append(8)
+
+#print(queue)
+
+#pop the first item out
+#print('popped', queue.popleft())
+#print('new_queue', queue)
+
+
+#Hash tables
+#Hash tables are dictionaries
+item1 = dict({'key1': 1, 'key2': 2, 'key3': 3})
+
+#for item, val in item1.items():
+#   print('item', item, 'val,', val)
+
+
+#Recursion example
+import time
+import math
+def recursion(number):
+    #The breaking point
+    
+    if number <= 0:
+        time.sleep((math.pi)/14)
+
+        print('Done!')
+        return 
+
+    #The recursive point
+    else:
+        time.sleep(0.33)
+
+        print(number)
+        recursion(number - 1)
+    print(f'Rewinding {number}')
+
+#recursion(10)
+
+#Reverse string example using recursion
+def names(your_name, reverse_name=''):
+    
+    if len(your_name) == 0:
+        return
+    
+    else:
+        reverse_name += your_name[-1]
+        your_name = your_name[:-1]
+        print(reverse_name)
+        names(your_name, reverse_name)
+
+#names('Chidiebere Clington Okpara Saake Atuma Chidiebere Clington Okpara Saake Atuma Chidiebere Clington')
+
+def reverse_string(string, count=0):
+    if len(string) == count:
+        return 
+
+    else:
+        print(string[-1 - count])
+        reverse_string(string, count + 1)
+
+#reverse_string('Atuma Chidiebere Clington Okpara Saake Atuma Chidiebere Clington Okpara Saake Atuma Chidiebere Clington')
+
+def power(num, pwr):
+    if pwr == 0:
+        return 1
+    
+    else: 
+        return num * power(num, pwr-1)
+
+#print(power(2, 4))
+
+def factorial(num):
+    if num == 0:
+        return 1
+    else:
+        return num * factorial(num - 1)
+
+#print(factorial(4))
+
+#SOrting algorithms
 
 
 
